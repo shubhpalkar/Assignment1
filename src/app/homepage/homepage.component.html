@@ -1,0 +1,49 @@
+<h1 style="text-align: center"> List of University of India </h1>
+<br>
+
+<div class="row">
+    <div class="col-sm-4">
+    <button class="btn btn-primary btn-sm" style="margin-left: 120px;" (click)= "getSelectedRows()"> Click Me </button>
+</div>
+<div class="col-sm-6">
+    <div class="row">
+    <p>Count of selected rows - </p> 
+    <p> {{this.count}}</p>
+</div>
+</div>
+</div>
+<br>
+<div style="margin-left: 60px;">
+<ag-grid-angular 
+    #agGrid
+    style="width: 640px; height: 600px;" 
+    class="ag-theme-balham"
+    [rowData]="rowData | async" 
+    [enableSorting]="true"
+    [pagination]="true"
+    (gridReady)="onGridReady($event)"
+    [columnDefs]="columnDefs"
+    rowSelection="multiple"
+    onSelectionChanged = {onSelectionChanged}
+    [animateRows]="true"
+    [enableFilter]="true"
+    [floatingFilter]="true"
+    gridOptions="{{gridOptions}}" 
+   >
+</ag-grid-angular>
+
+
+</div>
+
+<!-- columnDefs = [
+    { headerName: 'User Id', field: 'userId', filter: true, checkboxSelection: true },
+    { headerName: 'id', field: 'id' },
+    { headerName: 'Title', field: 'title' },
+    { headerName: 'Completed', field: 'completed' }
+    
+  ]; -->
+
+
+
+ 
+
